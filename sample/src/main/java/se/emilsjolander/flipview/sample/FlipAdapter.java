@@ -1,4 +1,4 @@
-package main.se.emilsjolander.flipview;
+package se.emilsjolander.flipview.sample;
 
 import android.content.Context;
 import android.view.LayoutInflater;

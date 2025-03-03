@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         android:background="#ffffff"
         android:orientation="vertical"
-        tools:context="main.se.emilsjolander.flipview.MainActivity" >
+        tools:context="main.se.emilsjolander.flipview.se.emilsjolander.flipview.sample.MainActivity" >
     </se.emilsjolander.flipview.FlipView>
 
     <TextView

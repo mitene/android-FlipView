@@ -1,4 +1,4 @@
-package main.se.emilsjolander.flipview;
+package se.emilsjolander.flipview.sample;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -6,7 +6,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import main.se.emilsjolander.flipview.FlipAdapter.Callback;
+import se.emilsjolander.flipview.sample.FlipAdapter.Callback;
 import se.emilsjolander.flipview.FlipView;
 import se.emilsjolander.flipview.FlipView.OnFlipListener;
 import se.emilsjolander.flipview.FlipView.OnOverFlipListener;
