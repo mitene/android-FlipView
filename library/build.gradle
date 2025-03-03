@@ -1,23 +1,52 @@
-apply plugin: 'android-library'
-
-repositories {
-    mavenCentral()
-}
-dependencies {
-    compile 'com.android.support:support-v4:18.0.0'
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
 }
 
 android {
-    compileSdkVersion 18
-    buildToolsVersion '18.1.1'
+    compileSdk 34
+    namespace 'se.emilsjolander.flipview'
 
-    sourceSets {
-        main {
-            manifest.srcFile 'AndroidManifest.xml'
-            java.srcDirs = ['src']
-            res.srcDirs = ['res']
+    defaultConfig {
+        minSdk 11
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
         }
+        release {
+            minifyEnabled false
+        }
+    }
+
+    publishing {
+        // Publish as an AAB.
+        singleVariant('release')
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 }
 
-apply from: '../maven_push.gradle'
+dependencies {
+    implementation 'com.android.support:support-v4:18.0.0'
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                groupId = GROUP
+                artifactId = 'android-FlipView'
+                version = VERSION_NAME
+
+                afterEvaluate {
+                    from components.release
+                }
+            }
+        }
+    }
+}
